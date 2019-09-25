@@ -1,0 +1,8 @@
+(define (factorial n)
+  (define (fac-times n acc)
+    (if (= n 0)
+        acc
+        (fac-times (- n 1) (* acc n))))
+  (if (< n 0)
+      (display "Невірний параметр!")
+      (fac-times n 1)))
