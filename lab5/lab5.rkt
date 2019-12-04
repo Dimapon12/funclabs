@@ -1,0 +1,16 @@
+#lang racket
+(define s "Example string for lab5")
+(define res "")
+(define first "")
+(define last "")
+(define lst (string-split s))
+(for-each (lambda (i) 
+          (set! first (string-ref i 0))
+          (set! last (string-ref i (- (string-length i) 1)))
+          (string-set! i 0 last)
+          (string-set! i (- (string-length i) 1) first)
+          (set! res (string-append res i " "))
+          )
+          lst)
+
+(display res)
